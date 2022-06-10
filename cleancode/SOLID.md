@@ -39,7 +39,6 @@ SOLID principles guides a software architecture.
 > 
 Boundaries are lines that separate software elements. They separate things that matter from things that don’t, i.e. high-level components from low-level components. If a high-level component depends on a low-level component at the source level, changes in the low-level components will spread to the high-level component. Therefore, we place a boundary between the two, using polymorphism to invert the logic flow. 
 
-Dependency Inversion
 <img width="503" alt="image" src="https://user-images.githubusercontent.com/43614605/172988157-e1c7f29d-98ad-4123-aee9-587e17c2c357.png">
 
 For example, let’s say your business rules depend on a concrete class accessing the database. You want to draw a boundary between the business rules and the database. The first thing to do is to define a new interface representing the database in the business rules component. Then, have your business rules depend on the interface instead of the concrete database class. Then, have the concrete database class implement your interface. The wiring between the database interface and implementation will be done in your main method manually or by some dependency injection framework.
